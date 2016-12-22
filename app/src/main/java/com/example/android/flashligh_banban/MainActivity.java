@@ -10,7 +10,11 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ToggleButton;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
 
@@ -19,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView imageView = (ImageView) findViewById(R.id.gif_window);
+        Glide.with(this).load(R.drawable.waiting).into(new GlideDrawableImageViewTarget(imageView));
     }
 
     public void state(View view){
@@ -26,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
         Boolean isChecked = getState.isChecked();
         Log.i("State","Is " + isChecked);
         on(isChecked);
+        changeGif(isChecked);
+    }
+
+    public void changeGif(Boolean isChecked) {
+        if (isChecked) {
+            ImageView imageView = (ImageView) findViewById(R.id.gif_window);
+            Glide.with(this).load(R.drawable.cheering).into(new GlideDrawableImageViewTarget(imageView));
+        } else{
+            ImageView imageView = (ImageView) findViewById(R.id.gif_window);
+            Glide.with(this).load(R.drawable.waiting).into(new GlideDrawableImageViewTarget(imageView));
+        }
     }
 
     private void on(Boolean isChecked){

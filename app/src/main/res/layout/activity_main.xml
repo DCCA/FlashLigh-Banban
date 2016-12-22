@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.flashligh_banban.MainActivity">
 
-    <TextView
-        android:id="@+id/title"
-        android:text="Flashight do Capeta"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
+    <ImageView
+        android:id="@+id/gif_window"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"/>
 
     <ToggleButton
         android:layout_width="300dp"
