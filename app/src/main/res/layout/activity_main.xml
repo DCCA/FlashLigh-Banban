@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.android.flashligh_banban.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingTop="30dp"
-        android:paddingBottom="30sp"
+        android:id="@+id/title"
+        android:text="Flashight do Capeta"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <ToggleButton
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:id="@+id/switch1"
+        android:buttonTint="@color/colorAccent"
+        android:showText="true"
         android:textOn="@string/on"
         android:textOff="@string/off"
-        android:onClick="state"/>
+        android:onClick="state"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+</RelativeLayout>
